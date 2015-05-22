@@ -4,7 +4,7 @@ For Coursera Getting and Cleaning Data class assignment.
 ## Overview
 The project involves combining multiple text files into one dataset, arranging the table, and then creating a new table that summarizes the data as the final output. (tidydata.txt)
 
-The data in this assignment is motion sensor readings from a smartphone. You can read about the data here [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones][1] and you can download the data here [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip][2]
+The data in this assignment is motion sensor readings from a smartphone. You can read about the data here http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones and you can download the data here [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]
 
 It is not necessary to understand the data to complete the assignment, though I briefly explain it in the Code Book section below.
 
@@ -40,7 +40,7 @@ Then I saved the output to tidydata.txt
 
 ## Code Book describing tidydata.txt
 
-Full list of columns in output table
+Full list of columns in tidydata.txt
 
 1.     Activity
 2.	Subject
