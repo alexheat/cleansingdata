@@ -4,7 +4,7 @@ For Coursera Getting and Cleaning Data class assignment.
 ## Overview
 The project involves combining multiple text files into one dataset, arranging the table, and then creating a new table that summarizes the data as the final output. (tidydata.txt)
 
-The data in this assignment is motion sensor readings from a smartphone. You can read about the data here http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones and you can download the data here [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]
+The data in this assignment is motion sensor readings from a smartphone. You can read about the data here http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones and you can download the data here https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 It is not necessary to understand the data to complete the assignment, though I briefly explain it in the Code Book section below.
 
@@ -28,7 +28,10 @@ run_analysis.R performs the following actions on the data in the above files. I 
  - select the columns that we have named and assign them back to alldata. Now alldata will only have 79 columns 
  - Then read the files that have the subject and activity collums and add them to alldata as new columns on the left side of the table.
 
-Now you should have an alldata table with 10,299 rows and 81 columns.
+Now you should have an alldata table with 10,299 rows and 81 columns. With this format
+
+Activity 	Subject		tBodyAcc-mean()-X	
+1 			     LAYING		 0.2215982
 
 Next we want to calculate the average of each variable, for each subject, and each activity--and save in a new tidydata table.
 
