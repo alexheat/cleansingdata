@@ -36,7 +36,7 @@ You can this very simply with one line of code using dpylr funtions
 
     alldata %>% group_by(Activity, Subject) %>% summarise_each(funs(mean))
 
-This is the basic format of the table, thought there are 81 columns 
+This is the basic format of the table, though there are 81 columns 
 
 | Activity | Subject | tBodyAcc-mean()-X | tBodyAcc-mean()-Y |
 |----------|---------|-------------------|-------------------|
