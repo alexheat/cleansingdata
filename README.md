@@ -28,10 +28,7 @@ run_analysis.R performs the following actions on the data in the above files. I 
  - select the columns that we have named and assign them back to alldata. Now alldata will only have 79 columns 
  - Then read the files that have the subject and activity collums and add them to alldata as new columns on the left side of the table.
 
-Now you should have an alldata table with 10,299 rows and 81 columns. With this format
-
-Activity 	Subject		tBodyAcc-mean()-X	
-1 			     LAYING		 0.2215982
+Now you should have an alldata table with 10,299 rows and 81 columns. 
 
 Next we want to calculate the average of each variable, for each subject, and each activity--and save in a new tidydata table.
 
@@ -39,14 +36,35 @@ You can this very simply with one line of code using dpylr funtions
 
     alldata %>% group_by(Activity, Subject) %>% summarise_each(funs(mean))
 
+This is the basic format of the table, thought there are 81 columns 
+
+| Activity | Subject | tBodyAcc-mean()-X | tBodyAcc-mean()-Y |
+|----------|---------|-------------------|-------------------|
+| 1        | LAYING  | 0.2215982         | -0.040513953      |
+| 2        | LAYING  | 0.2813734         | -0.01815874       |
+| 3        | LAYING  | 0.2755169         | -0.018955679      |
+
 Then I saved the output to tidydata.txt
 
 ## Code Book describing tidydata.txt
+The data in tidydata.txt is a summary of the data in the original set. It has 91 columns, though the original had more than 500. The tidydata dataset only has the collumns that show the mean and the standard deviations of the data sets. The tidydata is grouped to show the mean for each combination of activity, subject, and variable.
+
+The actual data collected in data is quite technical and complicated. I took below description from the the features_info.txt file in the zip file that contains the full data set. 
+
+>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+>These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 Full list of columns in tidydata.txt
+(Unless otherwise stated, the values of the table are numeric readings with formats such as "0.2215982" or "-0.018955679")
 
-1.     Activity
-2.	Subject
+1. Activity >> Notes: 6 Values "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
+2.	Subject >> Note: This is a number between 1:30, corresponding to the 30 subjects
 3.	tBodyAcc-mean()-X
 4.	tBodyAcc-mean()-Y
 5.	tBodyAcc-mean()-Z
